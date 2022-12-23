@@ -1,0 +1,7 @@
+Mall
+SMALL 50
+medium 30
+LArge 20
+Park motorcycle
+Park scooter
+Unpark motorcycle, ticket number 001
