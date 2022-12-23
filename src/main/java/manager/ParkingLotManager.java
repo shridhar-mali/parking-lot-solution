@@ -81,7 +81,7 @@ public class ParkingLotManager {
 
     private void handleParkAction(String[] actionParams) {
         SpotType spotType = SpotType.getSpotType(actionParams[1]);
-        if (freeSpotsCount(spotType) > 0) {
+        if (isParkingAvailable(spotType)) {
             Ticket ticket = ticketService.generateTicketFor(parkingLotRepository.nextSpotNumberFor(spotType));
             ticketService.printTicket(ticket);
             Vehicle vehicle = new Vehicle(actionParams[1], spotType, ticket);
@@ -89,6 +89,10 @@ public class ParkingLotManager {
         } else {
             System.out.println("No space available");
         }
+    }
+
+    private boolean isParkingAvailable(SpotType spotType) {
+        return freeSpotsCount(spotType) > 0;
     }
 
     private void handleUnParkAction(String actionDetails, String actionParam) {

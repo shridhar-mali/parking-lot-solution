@@ -25,9 +25,7 @@ public class ParkingLotDriver {
 
         allLines.stream()
                 .skip(4)
-                .forEach(action -> {
-                    parkingLotManager.handleAction(action);
-        });
+                .forEach(action -> parkingLotManager.handleAction(action));
 
     }
 
