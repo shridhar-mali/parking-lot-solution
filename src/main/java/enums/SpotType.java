@@ -1,9 +1,15 @@
 package enums;
 
 public enum SpotType {
-    SMALL,
-    MEDIUM,
-    LARGE;
+    SMALL("Motorcycles/Scooters"),
+    MEDIUM("Cars/SUVs"),
+    LARGE("Buses/Trucks");
+
+    private String supportedVehicles;
+
+    SpotType(String supportedVehicles) {
+        this.supportedVehicles = supportedVehicles;
+    }
 
     public static SpotType getSpotType(String vehicle) {
         SpotType spotType;

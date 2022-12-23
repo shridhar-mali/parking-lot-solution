@@ -322,7 +322,7 @@ override.tf.json
 terraform.rc
 
 ### Terragrunt ###
-# terragrunt cache directories
+# terragrunt cache directoriesgit
 **/.terragrunt-cache/*
 
 # Terragrunt debug output file (when using `--terragrunt-debug` option)
