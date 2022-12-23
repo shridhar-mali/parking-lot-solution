@@ -83,9 +83,9 @@ public class ParkingLotManager {
         SpotType spotType = SpotType.getSpotType(actionParams[1]);
         if (freeSpotsCount(spotType) > 0) {
             Ticket ticket = ticketService.generateTicketFor(parkingLotRepository.nextSpotNumberFor(spotType));
+            ticketService.printTicket(ticket);
             Vehicle vehicle = new Vehicle(actionParams[1], spotType, ticket);
             parkingLotRepository.park(vehicle);
-            ticketService.printTicket(ticket);
         } else {
             System.out.println("No space available");
         }
