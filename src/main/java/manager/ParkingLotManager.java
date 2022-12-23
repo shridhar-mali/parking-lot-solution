@@ -70,7 +70,7 @@ public class ParkingLotManager {
                 break;
 
             case "UNPARK":
-                handleUnparkAction(actionDetails, actionParams[1]);
+                handleUnParkAction(actionDetails, actionParams[1]);
                 break;
 
             default:
@@ -91,7 +91,7 @@ public class ParkingLotManager {
         }
     }
 
-    private void handleUnparkAction(String actionDetails, String actionParam) {
+    private void handleUnParkAction(String actionDetails, String actionParam) {
         Long ticketNumber = Long.valueOf(actionDetails.substring(actionDetails.indexOf("ticket number ")).replace("ticket number ", ""));
         SpotType currentSpotType = SpotType.getSpotType(actionParam.replace(",", ""));
         Vehicle vehicle = new Vehicle(actionParam, currentSpotType, new Ticket(ticketNumber));
