@@ -6,8 +6,7 @@ import service.fee.MallParkingFeeService;
 import service.fee.ParkingFeeService;
 import service.fee.StadiumParkingFeeService;
 
-import static enums.FeeModel.MALL;
-import static enums.FeeModel.STADIUM;
+import static enums.FeeModel.*;
 
 public final class SimpleParkingFeeServiceFactory {
 
@@ -16,8 +15,10 @@ public final class SimpleParkingFeeServiceFactory {
             return new MallParkingFeeService();
         } else if (STADIUM == feeModel) {
             return new StadiumParkingFeeService();
-        } else {
+        } else if (AIRPORT == feeModel) {
             return new AirportParkingFeeService();
+        } else {
+            throw new IllegalStateException("Fee model not supported");
         }
     }
 }
